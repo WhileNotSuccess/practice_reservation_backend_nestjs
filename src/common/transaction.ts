@@ -1,13 +1,14 @@
 //트랜잭션 전용 함수
 
 import { BadRequestException } from "@nestjs/common"
-import { DataSource, InsertQueryBuilder, QueryBuilder, QueryRunner } from "typeorm"
+import { DataSource} from "typeorm"
 
 /**
  * post, delete, put transaction function
- * @param queryBuilder 
+ * @param queryBuilder
  * not execute(), execute
  */
+
 
 export async function TransactionFunction(queryBuilder){
     let dataSource:DataSource

@@ -12,6 +12,6 @@ export class SessionSerializer extends PassportSerializer{
 
     async deserializeUser(user: any, done: Function) {
         const userDB = await this.userService.findOne({where:{googleId:user.googleId}})
-        return userDB ? done(null,userDB) : done(null,null)
+        return userDB ? done(null,userDB.id) : done(null,null)
     }
 }
